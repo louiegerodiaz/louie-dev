@@ -5,3 +5,26 @@
 .banner .nav a {
   @extend .nav-link;
 }
+
+.side {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .py-3;
+  @extend .pr-4;
+  @extend .pl-5;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100vh;
+}
+
+.side .nav {
+  @extend .d-flex;
+  @extend .flex-column;
+}
+
+.side .contact {
+  @extend .mt-auto;
+}
