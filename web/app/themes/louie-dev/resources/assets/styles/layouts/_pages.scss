@@ -1,5 +1,15 @@
-.main {
-  max-width: 850px;
+.page .main {
+  max-width: 1024px;
   margin: 0 auto 0 0;
   padding: 5rem;
+}
+
+.page h4 {
+  margin-top: 5rem;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.page h2 {
+  font-size: 4rem;
 }
