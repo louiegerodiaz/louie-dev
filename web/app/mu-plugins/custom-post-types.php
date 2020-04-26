@@ -11,6 +11,9 @@
 add_action( 'init', function() {
 	register_extended_post_type( 'site-musing', [
 
+    # Menu icon for extra personality
+    'menu_icon' => 'dashicons-heart',
+
 		# Add the post type to the site's main RSS feed:
 		'show_in_feed' => true,
 
@@ -24,7 +27,15 @@ add_action( 'init', function() {
 				'meta_key'    => 'published_date',
 				'date_format' => 'd/m/Y'
 			),
+			'tag' => array(
+        'title'    => 'Tags',
+				'taxonomy' => 'tag'
+			)
 		),
+    
+    # Enable Guternberg editor
+    'show_in_rest' => true,
+    'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'author'),
 
 	], [
 
@@ -35,7 +46,36 @@ add_action( 'init', function() {
 
   ] );
 
+  register_extended_taxonomy( 'site-musing_tag', 'site-musing', array(
+  
+    # Show this taxonomy in the 'At a Glance' dashboard widget:
+    'dashboard_glance' => true,
+
+    # Show this taxonomy on Gutenberg editor
+    'show_in_rest' => true,
+  
+    # Add a custom column to the admin screen:
+    'admin_cols' => array(
+      'updated' => array(
+        'title'       => 'Updated',
+        'meta_key'    => 'updated_date',
+        'date_format' => 'd/m/Y'
+      ),
+    ),
+  
+  ), array(
+  
+    # Override the base names used for labels:
+    'singular' => 'Tag',
+    'plural'   => 'Tags',
+    'slug'     => 'tags'
+  
+  ) );
+
   register_extended_post_type( 'dev-diaries', [
+
+    # Menu icon for extra personality
+    'menu_icon' => 'dashicons-book-alt',
 
 		# Add the post type to the site's main RSS feed:
 		'show_in_feed' => true,
@@ -50,7 +90,15 @@ add_action( 'init', function() {
 				'meta_key'    => 'published_date',
 				'date_format' => 'd/m/Y'
 			),
-		),
+			'tag' => array(
+        'title'    => 'Tags',
+				'taxonomy' => 'tag'
+			)
+    ),
+    
+    # Enable Guternberg editor
+    'show_in_rest' => true,
+    'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'author'),
 
 	], [
 
@@ -59,5 +107,37 @@ add_action( 'init', function() {
 		'plural'   => 'Dev Diaries',
 		'slug'     => 'dev-diaries',
 
-	] );
+  ] );
+  
+  register_extended_taxonomy( 'dev-diaries_tag', 'dev-diaries', array(
+  
+    # Show this taxonomy in the 'At a Glance' dashboard widget:
+    'dashboard_glance' => true,
+
+    # Show this taxonomy on Gutenberg editor
+    'show_in_rest' => true,
+  
+    # Add a custom column to the admin screen:
+    'admin_cols' => array(
+      'updated' => array(
+        'title'       => 'Updated',
+        'meta_key'    => 'updated_date',
+        'date_format' => 'd/m/Y'
+      ),
+    ),
+  
+  ), array(
+  
+    # Override the base names used for labels:
+    'singular' => 'Tag',
+    'plural'   => 'Tags',
+    'slug'     => 'tags'
+  
+  ) );
+
 } );
+
+# Disabling default post in the admin menu. This actual post type is stil accessible though
+add_action('admin_menu', function (){
+  remove_menu_page('edit.php');
+});
