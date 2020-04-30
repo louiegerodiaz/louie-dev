@@ -6,7 +6,7 @@
     @endif
   </nav>
   <div class="contact">
-    <p><a class="link-underline" href="mailto:hello@louie.dev">hello@louie.dev</a></p>
-    <p>Pasig City, Manila, PH</p>
+    <p class="mb-2"><a class="link-underline" href="mailto:hello@louie.dev">hello@louie.dev</a></p>
+    <p class="mb-0">Pasig City, Manila, PH</p>
   </div>
 </header>

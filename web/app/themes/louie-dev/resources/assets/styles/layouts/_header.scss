@@ -26,6 +26,15 @@
   @extend .flex-column;
 }
 
+.side .menu-item {
+  @extend .mt-2;
+}
+
+.side a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
 .side .contact {
   @extend .mt-auto;
 }

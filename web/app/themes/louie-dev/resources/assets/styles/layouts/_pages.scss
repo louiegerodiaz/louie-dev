@@ -13,3 +13,11 @@
 .page h2 {
   font-size: 4rem;
 }
+
+// home
+.home .content {
+  @extend .d-flex;
+  @extend .align-items-center;
+
+  height: 100%;
+}

@@ -1,3 +1,38 @@
+@font-face {
+  font-family: "Baybayin";
+  src: url("../fonts/TagDoc93.ttf");
+}
+
 html {
   font-size: 20px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.front {
+  font-family: $font-family-lead;
+
+  &__main {
+    font-family: $font-family-lead;
+    font-size: 1.65rem;
+    line-height: 1.5;
+  }
+}
+
+.brand {
+  font-family: "Baybayin", serif;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-decoration-color: $yellow;
+
+  &:hover {
+    text-decoration-color: $yellow;
+  }
+}
+
+.link-underline {
+  text-decoration: underline;
 }
