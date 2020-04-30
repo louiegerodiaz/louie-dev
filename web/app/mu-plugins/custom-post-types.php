@@ -27,9 +27,9 @@ add_action( 'init', function() {
 				'meta_key'    => 'published_date',
 				'date_format' => 'd/m/Y'
 			),
-			'tag' => array(
+			'site-musing_tag' => array(
         'title'    => 'Tags',
-				'taxonomy' => 'tag'
+				'taxonomy' => 'site-musing_tag'
 			)
 		),
     
@@ -66,8 +66,8 @@ add_action( 'init', function() {
   ), array(
   
     # Override the base names used for labels:
-    'singular' => 'Tag',
-    'plural'   => 'Tags',
+    'singular' => 'Site Musing Tag',
+    'plural'   => 'Site Musing Tags',
     'slug'     => 'tags'
   
   ) );
@@ -83,16 +83,16 @@ add_action( 'init', function() {
 		# Add the post type to the 'Recently Published' section of the dashboard:
 		'dashboard_activity' => true,
 
-		# Add some custom columns to the admin screen:
+    # Add some custom columns to the admin screen:
 		'admin_cols' => array(
 			'published' => array(
 				'title'       => 'Published',
-				'meta_key'    => 'published_date',
-				'date_format' => 'd/m/Y'
+				'post_field'    => 'post_date',
+				'date_format' => 'd/m/Y',
 			),
-			'tag' => array(
+			'dev-diaries_tag' => array(
         'title'    => 'Tags',
-				'taxonomy' => 'tag'
+				'taxonomy' => 'dev-diaries_tag',
 			)
     ),
     
@@ -129,8 +129,8 @@ add_action( 'init', function() {
   ), array(
   
     # Override the base names used for labels:
-    'singular' => 'Tag',
-    'plural'   => 'Tags',
+    'singular' => 'Dev Diary Tag',
+    'plural'   => 'Dev Diary Tags',
     'slug'     => 'tags'
   
   ) );
