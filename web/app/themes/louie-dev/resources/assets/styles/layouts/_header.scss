@@ -35,6 +35,18 @@
   opacity: 0.8;
 }
 
+.side .brand {
+  font-family: "Baybayin", serif;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-decoration-color: $yellow;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: $yellow;
+  }
+}
+
 .side .contact {
   @extend .mt-auto;
 }

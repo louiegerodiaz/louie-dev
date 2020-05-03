@@ -22,15 +22,8 @@ body {
   }
 }
 
-.brand {
-  font-family: "Baybayin", serif;
-  font-size: 1rem;
-  text-decoration: underline;
-  text-decoration-color: $yellow;
-
-  &:hover {
-    text-decoration-color: $yellow;
-  }
+.link-none:hover {
+  text-decoration: none;
 }
 
 .link-underline {
