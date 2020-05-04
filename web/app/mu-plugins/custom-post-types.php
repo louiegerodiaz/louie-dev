@@ -9,7 +9,7 @@
  */
 
 add_action( 'init', function() {
-	register_extended_post_type( 'site-musing', [
+	register_extended_post_type( 'viewports', [
 
     # Menu icon for extra personality
     'menu_icon' => 'dashicons-heart',
@@ -27,9 +27,9 @@ add_action( 'init', function() {
 				'meta_key'    => 'published_date',
 				'date_format' => 'd/m/Y'
 			),
-			'site-musing_tag' => array(
+			'viewports_tag' => array(
         'title'    => 'Tags',
-				'taxonomy' => 'site-musing_tag'
+				'taxonomy' => 'viewports_tag'
 			)
 		),
     
@@ -40,13 +40,13 @@ add_action( 'init', function() {
 	], [
 
 		# Override the base names used for labels:
-		'singular' => 'Site Musing',
-		'plural'   => 'Site Musings',
-		'slug'     => 'site-musings',
+		'singular' => 'Viewport',
+		'plural'   => 'Viewports',
+		'slug'     => 'viewports',
 
   ] );
 
-  register_extended_taxonomy( 'site-musing_tag', 'site-musing', array(
+  register_extended_taxonomy( 'viewports_tag', 'viewports', array(
   
     # Show this taxonomy in the 'At a Glance' dashboard widget:
     'dashboard_glance' => true,
@@ -66,9 +66,9 @@ add_action( 'init', function() {
   ), array(
   
     # Override the base names used for labels:
-    'singular' => 'Site Musing Tag',
-    'plural'   => 'Site Musing Tags',
-    'slug'     => 'tags'
+    'singular' => 'Viewport Tag',
+    'plural'   => 'Viewports Tags',
+    'slug'     => 'viewports_tags'
   
   ) );
 
@@ -131,7 +131,7 @@ add_action( 'init', function() {
     # Override the base names used for labels:
     'singular' => 'Dev Diary Tag',
     'plural'   => 'Dev Diary Tags',
-    'slug'     => 'tags'
+    'slug'     => 'dev-diary_tags'
   
   ) );
 
