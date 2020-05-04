@@ -17,3 +17,49 @@
 .single-dev-diaries .entry-title {
   font-size: 3rem;
 }
+
+.post-type-archive-viewports .main {
+  /* max-width: calc(100% - 200px);
+  margin-right: auto;
+  padding: 1rem;
+  padding-top: 5rem;
+  padding-left: 5rem; */
+  max-width: 1200px;
+  margin: 0 auto 0 0;
+  padding: 5rem;
+}
+
+.viewport-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+  grid-gap: 6em;
+  margin-right: 6em;
+  margin-bottom: 3rem;
+}
+
+.viewports {
+  position: relative;
+}
+
+.viewports__thumbnail {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #000;
+  -webkit-box-shadow: 16px 16px 0 #444;
+  box-shadow: 16px 16px 0 #444;
+}
+
+.viewports__title {
+  background-color: yellow;
+  padding: 1rem;
+  text-align: right;
+  position: absolute;
+  right: -3rem;
+  bottom: 1rem;
+  width: fit-content;
+}

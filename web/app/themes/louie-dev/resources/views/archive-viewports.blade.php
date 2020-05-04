@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header mb-5">
-    <h4 class="main-sub">thoughts, nuances, and everything in between</h4>
+    <h4 class="main-sub">curated list of my favorite sites</h4>
     <h1 class="main-title">{!! post_type_archive_title( '', false ) !!}</h1>
   </div>
 
@@ -13,9 +13,11 @@
     {!! get_search_form(false) !!}
   @endif
 
+  <div class="viewport-list">
   @while (have_posts()) @php the_post() @endphp
     @include('partials.content-'.get_post_type())
   @endwhile
+  </div>
 
   {!! get_the_posts_navigation() !!}
 @endsection
